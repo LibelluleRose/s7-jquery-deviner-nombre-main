@@ -1,21 +1,34 @@
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
+
 		<meta charset="utf-8">
 		<title>Devine</title>
 		<meta name="description" content="Devine le nombre">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+		<script src="script.js"></script>
+		<link rel="stylesheet" href="style.css">
+
 	</head>
 	<body>
 		<h1>Devine le nombre </h1>
 		<p>Un nombre aléatoire entre 1 et 100 a été choisi. Essaie de le trouver en moins de dix essais.
 			Pour faciliter un peu les choses, nous te dirons à chaque fois si le nombre soumis est plus petit ou plus grand que le
 			nombre choisi.</p>
-		<div>
+		<div class="flex">
 			<label for="essai">Le nombre choisi est: </label>
 			<input type="text" id="essai">
 			<button>Soumettre</button>
 		</div>
-		<div class="nombres">
+		<div id="MessErreur" hidden>
+			<p>Essais précédents: </p>
+			<p class="erreurRouge">Erreur!</p>
+			<p></p>
+		</div>
+
+		<div class="nombres flex">
 			<div id="1" class="nombre">001</div>
 			<div id="2" class="nombre">002</div>
 			<div id="3" class="nombre">003</div>

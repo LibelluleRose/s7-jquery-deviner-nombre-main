@@ -1,0 +1,7 @@
+.flex{
+    display: flex;
+}
+.erreurRouge{
+    background-color: deeppink;
+    color: white;
+}
