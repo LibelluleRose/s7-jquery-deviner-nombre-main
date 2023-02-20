@@ -6,11 +6,14 @@
     color: white;
 }
 .nombre{
-    paddin: 20px;
+
     margin: 5px;
     border: 1px solid black;
+    width: px;
+    height: 30px;
 }
 .nombres{
-
+    display: inline-flex;
+    width: 15px;
 }
 
