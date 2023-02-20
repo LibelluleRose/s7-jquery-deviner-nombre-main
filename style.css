@@ -1,7 +1,16 @@
 .flex{
     display: flex;
 }
-.erreurRouge{
+.BarreMessage{
     background-color: deeppink;
     color: white;
 }
+.nombre{
+    paddin: 20px;
+    margin: 5px;
+    border: 1px solid black;
+}
+.nombres{
+
+}
+
