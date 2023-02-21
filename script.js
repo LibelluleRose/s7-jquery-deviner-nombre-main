@@ -1,6 +1,6 @@
 //Nombre caché
-let NbrCache = Math.ceil(Math.random() * 100); //le nombre à deviner
-let CptEssai = 0;
+const NbrCache = Math.ceil(Math.random() * 100); //le nombre à deviner
+let CptEssai = 0; //todo: max 10
 let message =
     [
         'Trop bas!',
@@ -17,15 +17,15 @@ $(document).ready(function () {
     ///////////////////////////////
 
 //fonction qui supprime les nbr plus petit
-    function EnleverNombrePlusPetit() {
-        for (let i = 0; i < Nombre; i++) {
+    function EnleverNombrePlusPetit(nb) {
+        for (let i = 0; i <= nb; i++) {
             $("#" + i).hide(); //unexpected tokken à revoir
         }
     }
 
     //fonction qui supprime les nbr plus grand
-    function EnleverNombrePlusGrand() {
-        for (let i = Nombre; i < 100; i++) {
+    function EnleverNombrePlusGrand(nb) {
+        for (let i = nb; i <= 100; i++) {
             $("#" + i).hide(); //unexpected tokken à revoir
         }
     }
@@ -45,8 +45,8 @@ $(document).ready(function () {
         }
     }
 
-    function AfficherEssai(){
-        $("#EssaiPrecedent").append(" " + Nombre);
+    function AfficherEssai(nb){
+        $("#EssaiPrecedent").append(" " + nb);
     }
 
     //////////////////////////////////////////
@@ -59,22 +59,27 @@ $(document).ready(function () {
 
 $("#submit").click(function (){
 
+    Let Nombre;
+
+
+
+
     //Lire le nombre
     //todo: Vérifier avec le prof sur pk erreur nan
-    let Nombre = 56;
-    //Nombre = parseInt($("#essai").val);
+  //  Nombre = 56;
+    Nombre = parseInt($("#essai").val());
 
     //Afficher le nombre dans la liste des essai
-    AfficherEssai();
+    AfficherEssai(Nombre);
 
     //Comparer le nbr ak le NbrCaché
     if (Nombre < NbrCache) {
-        EnleverNombrePlusPetit();
+        EnleverNombrePlusPetit(Nombre);
         AfficherMessage(false);
         $("#Message").text(message[0]);
 
     } else if (Nombre > NbrCache) {
-        EnleverNombrePlusGrand();
+        EnleverNombrePlusGrand(Nombre);
         AfficherMessage(false);
         $("#Message").text(message[1]);
 
@@ -93,7 +98,8 @@ $("#submit").click(function (){
         $("#BarreMessage").text(message[3]);
     }
 })
-
+//todo: effacer la valeur du champ
+    Nombre =
 
 
 

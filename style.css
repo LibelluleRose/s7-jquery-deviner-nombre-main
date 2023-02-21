@@ -23,8 +23,7 @@ body{
 .nombres {
     flex-direction: row;
     flex-wrap: wrap;
-    width: 900px;
-
+    width: 1000px;
 
 }
 
