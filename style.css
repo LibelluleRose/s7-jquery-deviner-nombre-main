@@ -1,19 +1,30 @@
-.flex{
+
+body{
+    width: 70vw;
+}
+
+
+.flex {
     display: flex;
 }
-.BarreMessage{
+
+.BarreMessage {
     background-color: deeppink;
     color: white;
 }
-.nombre{
 
-    margin: 5px;
+.nombre {
+    margin: 15px;
+    padding: 1rem 1.25rem;
     border: 1px solid black;
-    width: px;
-    height: 30px;
+    text-align: center;
 }
-.nombres{
-    display: inline-flex;
-    width: 15px;
+
+.nombres {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 900px;
+
+
 }
 

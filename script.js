@@ -1,6 +1,6 @@
 //Nombre caché
 let NbrCache = Math.ceil(Math.random() * 100); //le nombre à deviner
-
+let CptEssai = 0;
 let message =
     [
         'Trop bas!',
@@ -34,7 +34,7 @@ $(document).ready(function () {
     function AfficherMessage(reussi) {
         if (false) {
             $("#BarreMessage").css("background-color", "red");
-            $("#BarreMessage").text(message[3]);
+            $("#BarreMessage").text(message[2]);
 
 
         }
@@ -45,12 +45,16 @@ $(document).ready(function () {
         }
     }
 
+    function AfficherEssai(){
+        $("#EssaiPrecedent").append(" " + Nombre);
+    }
+
     //////////////////////////////////////////
     //boucle code
     ////////////////////////////////////
 
-//boucle pour les 10 essais
-    for (let i = 0; i < 10; i++) {
+//boucle pour les 10 essai
+
 
 
 $("#submit").click(function (){
@@ -59,6 +63,9 @@ $("#submit").click(function (){
     //todo: Vérifier avec le prof sur pk erreur nan
     let Nombre = 56;
     //Nombre = parseInt($("#essai").val);
+
+    //Afficher le nombre dans la liste des essai
+    AfficherEssai();
 
     //Comparer le nbr ak le NbrCaché
     if (Nombre < NbrCache) {
@@ -78,12 +85,18 @@ $("#submit").click(function (){
     }
     ;
 
+    //augmenter le cpt des essais
+    CptEssai++;
+
+    if(CptEssai > 10) {
+        $("#BarreMessage").css("background-color", "red");
+        $("#BarreMessage").text(message[3]);
+    }
 })
 
 
 
 
-    }//fin bouble for
 
 
 })//fin du ready
