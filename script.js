@@ -1,6 +1,6 @@
 //Nombre caché
 const NbrCache = Math.ceil(Math.random() * 100); //le nombre à deviner
-let CptEssai = 0; //todo: max 10
+let CptEssai = 0;
 let message =
     [
         'Trop bas!',
